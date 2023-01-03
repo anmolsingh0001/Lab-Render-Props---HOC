@@ -1,23 +1,24 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
+// import Child from './components/Child';
+// import Child2 from './components/Child2';
+import Parentrender from './components/Parentrender';
+import Childrend from './components/Childrender';
+import Child2rend from './components/Child2render';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <Child/>
+      <Child2/> */}
+      <Parentrender render={(count,functio)=>(
+        <Childrend count={count} increment={functio} />
+      )} 
+      />
+      <Parentrender render={(count,functio)=>(
+        <Child2rend count={count} increment={functio} />
+      )} 
+      />
     </div>
   );
 }
